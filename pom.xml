@@ -27,9 +27,7 @@
         <url/>
     </scm>
     <properties>
-        <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
         <org.lombok.version>1.18.32</org.lombok.version>
-        <org.lombok.mapstruct.binding.version>0.2.0</org.lombok.mapstruct.binding.version>
         <java.version>17</java.version>
     </properties>
     <dependencies>
@@ -53,24 +51,6 @@
             <artifactId>lombok</artifactId>
             <version>${org.lombok.version}</version>
             <optional>true</optional>
-        </dependency>
-
-        <dependency>
-            <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct</artifactId>
-            <version>${org.mapstruct.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct-processor</artifactId>
-            <version>${org.mapstruct.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok-mapstruct-binding</artifactId>
-            <version>${org.lombok.mapstruct.binding.version}</version>
         </dependency>
 
     </dependencies>
