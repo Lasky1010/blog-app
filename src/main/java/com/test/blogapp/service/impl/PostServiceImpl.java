@@ -3,9 +3,11 @@ package com.test.blogapp.service.impl;
 import com.test.blogapp.data.entity.Post;
 import com.test.blogapp.data.repository.AuthorRepository;
 import com.test.blogapp.data.repository.PostRepository;
+import com.test.blogapp.data.request.UpdatePostRequest;
 import com.test.blogapp.exception.AuthorNotFoundException;
 import com.test.blogapp.exception.PostNotFoundException;
 import com.test.blogapp.service.PostService;
+import com.test.blogapp.util.PostUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -53,5 +55,17 @@ public class PostServiceImpl implements PostService {
     @Override
     public List<Post> getPosts() {
         return postRepository.findAll();
+    }
+
+    @Override
+    public Post updatePost(UpdatePostRequest updPost, Long postId) {
+        var post = postRepository.findById(postId).orElseThrow(PostNotFoundException::new);
+        return postRepository.save(PostUtil.updatePost(updPost, post));
+    }
+
+    @Override
+    public void deletePost(Long postId) {
+        var post = postRepository.findById(postId).orElseThrow(PostNotFoundException::new);
+        postRepository.delete(post);
     }
 }

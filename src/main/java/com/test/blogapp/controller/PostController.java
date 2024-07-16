@@ -1,6 +1,7 @@
 package com.test.blogapp.controller;
 
 import com.test.blogapp.data.entity.Post;
+import com.test.blogapp.data.request.UpdatePostRequest;
 import com.test.blogapp.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -37,6 +38,19 @@ public class PostController {
     @GetMapping("/author/{authorId}")
     public ResponseEntity<List<Post>> getPostByAuthor(@PathVariable Long authorId) {
         return ResponseEntity.ok(postService.getPostsByAuthor(authorId));
+    }
+
+    @PatchMapping("/{postId}")
+    public ResponseEntity<Post> updatePost(@PathVariable Long postId,
+                                           @RequestBody UpdatePostRequest updPost) {
+
+        return ResponseEntity.ok(postService.updatePost(updPost, postId));
+    }
+
+    @DeleteMapping("/{postId}")
+    public ResponseEntity<String> deleteAuthor(@PathVariable Long postId) {
+        postService.deletePost(postId);
+        return ResponseEntity.ok("Deleted post with id " + postId);
     }
 
 
