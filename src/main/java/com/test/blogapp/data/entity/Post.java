@@ -1,5 +1,6 @@
 package com.test.blogapp.data.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,6 +22,7 @@ public class Post {
     @Column(columnDefinition = "TEXT")
     private String content;
 
+    @JsonBackReference
     @ManyToOne
     private Author author;
 }
