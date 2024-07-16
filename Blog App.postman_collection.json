@@ -1,0 +1,359 @@
+{
+  "info": {
+    "_postman_id": "b9267610-4937-43a2-bb66-4c326e00f1bd",
+    "name": "Blog App",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "36627876"
+  },
+  "item": [
+    {
+      "name": "post",
+      "item": [
+        {
+          "name": "Get post by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/post/:postId",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "post",
+                ":postId"
+              ],
+              "variable": [
+                {
+                  "key": "postId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get posts (by title optional)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/post",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "post"
+              ],
+              "query": [
+                {
+                  "key": "title",
+                  "value": null,
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get posts by author",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/post/author/:authorId",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "post",
+                "author",
+                ":authorId"
+              ],
+              "query": [
+                {
+                  "key": "title",
+                  "value": null,
+                  "disabled": true
+                }
+              ],
+              "variable": [
+                {
+                  "key": "authorId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create post",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": null,\r\n    \"title\": \"t\",\r\n    \"content\": \"\",\r\n    \"author\":null\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/post/:authorId",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "post",
+                ":authorId"
+              ],
+              "variable": [
+                {
+                  "key": "authorId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update post",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\":\"\",\r\n    \"content\":\"\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/post/:postId",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "post",
+                ":postId"
+              ],
+              "variable": [
+                {
+                  "key": "postId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete post",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/post/:postId",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "post",
+                ":postId"
+              ],
+              "variable": [
+                {
+                  "key": "postId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "author",
+      "item": [
+        {
+          "name": "Get author by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/author/id/:authorId",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "author",
+                "id",
+                ":authorId"
+              ],
+              "variable": [
+                {
+                  "key": "authorId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get authors (by name optional)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/author",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "author"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get author by username",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/author/:username",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "author",
+                ":username"
+              ],
+              "query": [
+                {
+                  "key": "title",
+                  "value": null,
+                  "disabled": true
+                }
+              ],
+              "variable": [
+                {
+                  "key": "username",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create author",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\":null,\r\n    \"username\":\"\",\r\n    \"name\":\"\",\r\n    \"country\":\"\",\r\n    \"posts\":null\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/author",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "author"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update author",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"\",\r\n    \"country\":\"\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/author/:authorId",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "author",
+                ":authorId"
+              ],
+              "variable": [
+                {
+                  "key": "authorId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete author",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/author/:authorId",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "author",
+                ":authorId"
+              ],
+              "variable": [
+                {
+                  "key": "authorId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "localhost:8080"
+    }
+  ]
+}

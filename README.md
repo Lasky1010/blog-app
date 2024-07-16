@@ -33,3 +33,7 @@
     ```sh
    mvn clean install
 4. #### Запустите приложение
+
+## Postman
+
+#### Импортируйте файл [Blog App](Blog App.postman_collection.json) в Postman для тестирования
